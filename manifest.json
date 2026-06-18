@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Workday Skills Filler",
+  "version": "1.0",
+  "description": "Fill all your skills into Workday application forms",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "*://*.myworkdayjobs.com/*",
+    "*://*.wd*.myworkdayjobs.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fill Workday Skills"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.myworkdayjobs.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
